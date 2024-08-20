@@ -1,0 +1,65 @@
+.main-container {
+  height: 90vh;
+  padding: 0.3rem;
+  padding-bottom: 0;
+}
+:root {
+  --bg-color: rgb(7, 7, 26);
+}
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+.show-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  background-position: center;
+}
+.img-in {
+  flex: 1;
+}
+.hold-img,
+.card-img,
+.hold-up-img {
+  width: 5rem;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.7rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 52;
+  border: 3px solid;
+  max-height: 4rem;
+}
+.card-img {
+  right: 0.2rem;
+  bottom: 0.2rem;
+  max-height: 3rem;
+  z-index: 50;
+}
+.contain-img {
+  background-color: rgba(200, 200, 200, 0.6);
+  height: 100%;
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0.1rem;
+}
+.hold-up-img {
+  z-index: 200;
+  animation: enlarge 1s ease-in;
+}
+@keyframes enlarge {
+  from {
+    transform: scale(5rem, 5rem);
+  }
+  to {
+    transform: scale(80%, 80%);
+  }
+}
