@@ -7,16 +7,6 @@ import "../static/Home.css";
 export default function Home() {
   const [num, setNum] = useState(0);
 
-  // useEffect(() => {
-  //   try {
-  //     fetch("http://127.0.0.1:5000/Home")
-  //       .then((response) => response.json())
-  //       .then((data) => console.log(data));
-  //   } catch {
-  //     console.log(Error);
-  //   }
-  // }, []);
-
   let hldImg = "hold-img";
 
   function changImage() {
