@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import ServerData from "../ServerData.json";
 import "../static/Home.css";
+import Cart from "../icons/shopping-cart01.png"
 
 export default function Home() {
   const [num, setNum] = useState(0);
 
-  let hldImg = "hold-img";
+  let hldImg = "hold-img"; 
 
   function changImage() {
     const len = ServerData.length;
@@ -38,6 +39,7 @@ export default function Home() {
           <div className="card-img">
             {num < ServerData.length - 2 ? data[num + 2] : data[0]}
           </div>
+          <img alt="cart" src={Cart} className="cart"/>
         </div>
       </main>
       <Footer />
