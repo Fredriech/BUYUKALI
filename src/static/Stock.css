@@ -1,0 +1,125 @@
+.contain-detail {
+  display: flex;
+  /* min-height: 50rem; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  box-sizing: border-box;
+  max-width: 1500px;
+  margin: 20px auto;
+}
+
+.contain-detail div {
+  flex: 1;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.center-img {
+  width: 70%;
+  background-color: rgba(47, 47, 47, 0.481);
+  /* #101010; */
+  /* height: 46rem; */
+  margin: 1em;
+  padding: 0.4rem;
+  box-shadow: 1px -2px 5px 1px rgba(129, 129, 129, 0.192);
+  /* border: 1px solid rgba(66, 66, 66, 0.192); */
+}
+
+.image-slider {
+  max-width: 50%;
+  margin: 1em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
+  border: 4px solid rgba(169, 166, 166, 0.236);
+  padding: 4px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: 3px;
+}
+.img-A {
+  width: 100%;
+  max-height: 7rem;
+  padding: 3px;
+}
+.img-A img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  object-fit: cover;
+  object-position: top;
+}
+.img-A img:hover {
+  box-shadow: 0px -1px 4px 2px rgb(152, 12, 112);
+  border: 2px solid rgb(152, 12, 112);
+}
+.img-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.img-wrapper img {
+  width: 100%;
+  border-radius: 10px;
+}
+.img-details {
+  font-size: 1.6rem;
+  padding: 0.3em;
+  /* border: 2px solid white; */
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.img-details > div {
+  display: flex;
+  margin-bottom: 10px;
+}
+.img-details > div > div {
+  flex-grow: 1;
+  word-spacing: 6px;
+}
+.buy-button {
+  width: 6.6rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  margin-right: 0.4em;
+  font-size: 19px;
+  font-weight: 600;
+  color: rgb(238, 235, 245);
+  background-color: rgb(225, 11, 129);
+  /* rgba(71, 198, 248, 0.97); */
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.price {
+  background-color: rgba(169, 166, 166, 0.236);
+  color: whitesmoke;
+  padding: 2px 8px;
+  /* border-radius: 8px; */
+}
+.buy-button:hover {
+  border: 2px solid rgb(156, 9, 156);
+  box-shadow: -1px -1px 4px 1px rgb(156, 9, 156);
+}
+.checkme input {
+  display: none;
+}
+.checkme span {
+  color: plum;
+  font-size: 34px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.checkme {
+  margin-right: 16px;
+}
+.checkme input:checked ~ span {
+  color: red;
+}
+.liked {
+  text-align: center;
+  background-color: rgba(169, 166, 166, 0.192);
+  flex-grow: 0;
+  width: 0.3rem;
+}

@@ -4,3 +4,7 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}

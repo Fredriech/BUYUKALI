@@ -1,0 +1,34 @@
+.Load-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:root {
+  --len: 4rem;
+}
+.Load-box {
+  width: var(--len);
+  height: var(--len);
+  margin: 1em;
+  animation: loading 0.5s infinite linear;
+  border: 5px solid;
+}
+@keyframes loading {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+.Load-box:first-child {
+  border-color: yellow;
+}
+.Load-box:nth-child(2) {
+  border-color: red;
+}
+.Load-box:last-child {
+  border-color: blue;
+}

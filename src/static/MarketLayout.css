@@ -1,0 +1,23 @@
+.down-link .linked {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  min-height: 2em;
+  color: aliceblue;
+  padding-left: 14px;
+}
+.linked li {
+  min-width: 4.4rem;
+  padding: 0.4em 0.5em;
+  text-align: center;
+  font-size: 20px;
+  border: 3px solid rgba(110, 109, 109, 0.427);
+  transition: all 0.25s;
+}
+.nav-linker {
+  text-decoration: none;
+  color: aliceblue;
+}
+.linked li:hover {
+  background-color: rgba(208, 8, 128, 0.795);
+}

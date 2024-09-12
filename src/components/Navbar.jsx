@@ -1,6 +1,6 @@
 import React from "react";
 import "../static/navBar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -9,19 +9,44 @@ function Navbar() {
       <div className="nav-link">
         <ul>
           <li>
-            <Link className="linker" to="/">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-link linker" : "linker"
+              }
+              to="/Login"
+            >
               Login
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="linker" to="/About">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-link linker" : "linker"
+              }
+              to="/Register"
+            >
               Sign-up
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="linker" to="/Home">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-link linker" : "linker"
+              }
+              to="/"
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-link linker" : "linker"
+              }
+              to="/Home"
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

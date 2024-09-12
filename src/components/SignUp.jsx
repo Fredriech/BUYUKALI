@@ -8,13 +8,13 @@ export default function About() {
         <h4>INSPEKTA 6!</h4>
         <form>
           <label htmlFor="name">Username: </label>
-          <input type="text" name="name" />
+          <input type="text" id="name" />
           <label htmlFor="email">Email: </label>
-          <input type="text" name="email" />
+          <input type="text" id="email" />
           <label htmlFor="password1">password: </label>
-          <input type="text" name="password1" />
+          <input type="text" id="password1" />
           <label htmlFor="password2">comfirm password: </label>
-          <input type="text" name="password2" />
+          <input type="text" id="password2" />
           <div>
             <input type="submit" value={"Register"} />
           </div>

@@ -8,11 +8,11 @@ export default function Login() {
         <h4>INSPEKTA 6!</h4>
         <form>
           <label htmlFor="name">Username: </label>
-          <input type="text" name="name" />
+          <input type="text" id="name" />
           {/* <label htmlFor="email">Email: </label>
           <input type="text" name="email" /> */}
           <label htmlFor="password">password: </label>
-          <input type="text" name="password" />
+          <input type="text" id="password" />
           <div>
             <input type="submit" value={"Login"} />
           </div>

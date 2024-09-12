@@ -1,46 +1,46 @@
 [
   {
     "id": 0,
-    "url": "src/assets/calm.jpeg"
+    "url": "/src/images/20240822_202122.jpg"
   },
   {
     "id": 1,
-    "url": "src/assets/earth.jpg"
+    "url": "/src/images/20240822_202349.jpg"
   },
   {
     "id": 2,
-    "url": "src/assets/peakpx.jpg"
+    "url": "/src/images/20240822_202834.jpg"
   },
   {
     "id": 3,
-    "url": "src/assets/river.jpg"
+    "url": "/src/images/20240822_203046.jpg"
   },
   {
     "id": 4,
-    "url": "src/assets/red-clouds.jpg"
+    "url": "/src/assets/red-clouds.jpg"
   },
   {
     "id": 5,
-    "url": "src/assets/timetravel.jpeg"
+    "url": "/src/assets/timetravel.jpeg"
   },
   {
     "id": 6,
-    "url": "src/assets/peakpx1.jpg"
+    "url": "/src/assets/peakpx1.jpg"
   },
   {
     "id": 7,
-    "url": "src/assets/man.jpg"
+    "url": "/src/assets/man.jpg"
   },
   {
     "id": 8,
-    "url": "src/assets/ocean.jpg"
+    "url": "/src/assets/ocean.jpg"
   },
   {
     "id": 9,
-    "url": "src/assets/insidedark.jpg"
+    "url": "/src/assets/insidedark.jpg"
   },
   {
     "id": 10,
-    "url": "src/assets/greengrasses.jpg"
+    "url": "/src/assets/greengrasses.jpg"
   }
 ]
