@@ -5,6 +5,7 @@ import Home from "./Home";
 import Layout from "./Layout";
 import Market from "./Market";
 import Stock from "./Stock";
+import Purchase from "./Purchase";
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import MarketLayout from "./MarketLayout";
@@ -18,8 +19,10 @@ let MyApp = () => {
           <Route path="Register" element={<SignUp />} />
 
           <Route index element={<Market />} />
-          <Route path="About/:id" element={<MarketLayout />}>
+
+          <Route path="Market/:id" element={<MarketLayout />}>
             <Route index element={<Stock />} />
+            <Route path="Purchase" element={<Purchase />} />
           </Route>
 
           <Route path="Home" element={<Home />} />

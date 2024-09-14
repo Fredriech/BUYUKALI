@@ -11,6 +11,26 @@ export default () => {
             Back
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            className={(isActive) =>
+              isActive ? "barbelow nav-linker" : "nav-linker"
+            }
+            to=""
+          >
+            Stock
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={(isActive) =>
+              isActive ? "barbelow nav-linker" : "nav-linker"
+            }
+            to="Purchase"
+          >
+            Purchase
+          </NavLink>
+        </li>
       </ul>
       <Outlet />
     </div>

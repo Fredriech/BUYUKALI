@@ -5,7 +5,9 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <div className="app-name">
-      <h1>BUYUKALI</h1>
+      <div className="logo">
+        <img src="/src/images/logo2.png" />
+      </div>
       <div className="nav-link">
         <ul>
           <li>
@@ -35,7 +37,7 @@ function Navbar() {
               }
               to="/"
             >
-              About
+              Shooping
             </NavLink>
           </li>
           <li>
