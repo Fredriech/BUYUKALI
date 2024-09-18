@@ -18,14 +18,14 @@ let MyApp = () => {
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<SignUp />} />
 
-          <Route index element={<Market />} />
+          <Route path="Market" element={<Market />} />
 
           <Route path="Market/:id" element={<MarketLayout />}>
             <Route index element={<Stock />} />
             <Route path="Purchase" element={<Purchase />} />
           </Route>
 
-          <Route path="Home" element={<Home />} />
+          <Route index element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>

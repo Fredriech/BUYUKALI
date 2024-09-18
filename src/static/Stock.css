@@ -1,7 +1,7 @@
 .contain-detail {
   display: flex;
   box-sizing: border-box;
-  max-width: 960px;
+  max-width: 910px;
   margin: 10px auto;
 }
 
@@ -12,10 +12,20 @@ body {
   margin: 0;
   padding: 0;
 }
+.bk {
+  background-color: rgba(255, 141, 203, 0.352);
+  width: 49.4%;
+  padding-left: 5px;
+  margin-block: 0px;
+}
 .center-img {
   width: 64%;
-  /* background-color: rgb(255, 253, 253); */
-  background-image: linear-gradient(rgb(255, 253, 253), rgb(217, 32, 131));
+  min-width: 20rem;
+  background-image: linear-gradient(
+    110deg,
+    rgb(246, 217, 217),
+    rgb(217, 32, 131) 75%
+  );
   color: #030303;
   margin: 0.8em;
   padding: 0.4rem;
@@ -24,14 +34,14 @@ body {
 }
 
 .image-slider {
-  max-width: 50%;
+  max-width: 26rem;
   max-height: 32rem;
-  margin: 1em;
+  margin: 0.6em;
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 10px;
   border: 4px solid rgba(169, 166, 166, 0.236);
-  padding: 4px;
+  padding: 4px 0px 4px 12px;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-right: 3px;
@@ -53,14 +63,18 @@ body {
   object-fit: cover;
   object-position: top;
 }
-/* .img-A img:hover {
-  box-shadow: 0px -1px 4px 2px rgb(152, 12, 112);
-  border: 2px solid rgb(152, 12, 112);
-} */
+.img-A:hover {
+  background-color: rgba(108, 108, 187, 0.403);
+}
 .img-wrapper {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
+}
+.metric {
+  color: rgb(255, 202, 241);
+  padding: 0 6px;
+  background-color: rgba(158, 154, 154, 0.286);
 }
 .img-wrapper img {
   width: 100%;
@@ -73,9 +87,15 @@ body {
   line-height: 21px;
   letter-spacing: 1px;
 }
-.img-details > div {
+.img-details > div:not(.details-o1) {
   display: flex;
-  margin-bottom: 10px;
+  padding-block: 4px;
+}
+.details-o1 {
+  display: flex;
+}
+.details-o1 div {
+  padding-block: 4px;
 }
 .img-details > div > div {
   flex-grow: 1;
@@ -90,19 +110,18 @@ body {
   font-weight: 600;
   box-shadow: 2px 2px 4px 2px #c746009c;
   color: rgb(238, 235, 245);
-
+  border: none;
   background-color: #010101;
   border-radius: 4px;
-}
-.price {
-  background-color: rgba(223, 19, 158, 0.908);
-  color: whitesmoke;
-  padding: 2px 8px;
-  /* border-radius: 8px; */
 }
 .buy-button:hover {
   border: 3px solid rgba(134, 215, 210, 0.785);
   box-shadow: none;
+}
+.price {
+  /* background-color: rgba(223, 19, 158, 0.908); */
+  color: whitesmoke;
+  padding: 2px 8px;
 }
 .checkme input {
   display: none;
@@ -125,9 +144,40 @@ body {
 }
 .liked {
   text-align: center;
-  background-color: rgba(169, 166, 166, 0.322);
-  flex-grow: 0;
-  width: 0.3rem;
+  /* background-color: rgba(169, 166, 166, 0.322); */
   color: whitesmoke;
   font-size: 18px;
+}
+.wrapper {
+  height: 4rem;
+  width: 4rem;
+  margin: auto;
+  border-radius: 50%;
+  align-self: center;
+  border: 1em solid rgba(116, 115, 115, 0.37);
+  border-top: 1em solid rgb(214, 32, 147);
+  animation: spin 0.1s infinite linear;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.dButton {
+  display: flex;
+  justify-content: left;
+  position: relative;
+  height: 2.4rem;
+  margin-bottom: 8px;
+}
+.buy-button {
+  position: absolute;
+  bottom: 0;
+}
+.buy-button:last-child {
+  z-index: 50;
+  right: 0;
+}
+.buy-button:first-child {
+  background-color: rgb(4, 131, 131);
 }

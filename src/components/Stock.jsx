@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 import Data from "../ServerData.json";
 import "../static/Stock.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Stock() {
   const params = useParams();
   const id = Number(params.id);
   const [data, setData] = useState({
-    imgA: {},
-    imgGrp: <div className="img-A">Hello!</div>,
+    imgA: "",
+    imgGrp: (
+      <div className="wrapper">
+        <div className="spinner"></div>
+      </div>
+    ),
   });
   const [like, setLike] = useState(0);
+
+  function viewImg({ target }) {
+    const indx = target.src.indexOf("src") - 1;
+    setData((p) => {
+      return {
+        ...p,
+        imgA: { url: target.src.substr(indx) },
+      };
+    });
+  }
 
   useEffect(() => {
     Data.forEach((value) => {
@@ -18,7 +33,7 @@ export default function Stock() {
         let d = Data.map((v) => {
           return (
             <div key={v.id} className="img-A">
-              <img src={v.url} />
+              <img src={v.url} onClick={viewImg} />
             </div>
           );
         });
@@ -31,6 +46,12 @@ export default function Stock() {
       }
     });
   }, [params]);
+
+  const navigate = useNavigate();
+
+  function reDirectPage() {
+    return navigate("Purchase");
+  }
 
   return (
     <div className="contain-detail">
@@ -45,7 +66,7 @@ export default function Stock() {
         </div>
         <div className="img-details">
           <div className="details-o1">
-            <div>Type: long dress</div>
+            <div className="bk">Type: long dress</div>
             <div className="liked">
               Like{" "}
               <label className="checkme">
@@ -63,14 +84,23 @@ export default function Stock() {
             </div>
           </div>
 
-          <div>chest size: 30 cm</div>
-          <div>waist size: 32 cm </div>
+          <div className="bk">
+            chest size: <i className="metric">30</i> cm
+          </div>
+          <div className="bk">
+            waist size: <i className="metric">32</i> cm
+          </div>
 
           <div className="with-but">
             <div>
               price: <span className="price">30000 Tsh</span>{" "}
             </div>
-            <button className="buy-button">Buy</button>
+          </div>
+          <div className="dButton">
+            <button className="buy-button">Add to Cart</button>
+            <button className="buy-button" onClick={reDirectPage}>
+              Buy
+            </button>
           </div>
         </div>
       </div>

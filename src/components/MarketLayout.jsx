@@ -7,25 +7,26 @@ export default () => {
     <div className="down-link">
       <ul className="linked">
         <li>
-          <NavLink className="nav-linker" to=".." relative="Route">
+          <NavLink className="nav-linker" to=".." relative="path">
             Back
           </NavLink>
         </li>
         <li>
           <NavLink
-            className={(isActive) =>
+            to="."
+            end
+            className={({ isActive }) =>
               isActive ? "barbelow nav-linker" : "nav-linker"
             }
-            to=""
           >
             Stock
           </NavLink>
         </li>
         <li>
           <NavLink
-            className={(isActive) =>
-              isActive ? "barbelow nav-linker" : "nav-linker"
-            }
+            className={({ isActive }) => {
+              return isActive ? "barbelow nav-linker" : "nav-linker";
+            }}
             to="Purchase"
           >
             Purchase
