@@ -8,11 +8,15 @@
 :root {
   --max-width: 26rem;
 }
+#displayNone {
+  display: none;
+}
 .shop-card {
   display: flex;
   max-width: var(--max-width);
   position: relative;
   margin: auto;
+  margin-block: 10px;
   padding: 6px;
   border-radius: 4px;
   background-color: rgba(180, 10, 69, 0.66);
@@ -20,11 +24,16 @@
   /* rgb(135, 235, 225); */
   box-shadow: 1px 2px 2px 2px rgba(255, 255, 255, 0.237);
 }
+.shop-card:hover .remove {
+  display: inline-block;
+}
 
 .image-box {
-  width: 6rem;
+  width: 8rem;
   height: 6rem;
+  border: 2px solid #505050;
 }
+
 .image-box img {
   width: 100%;
   object-fit: cover;
@@ -35,14 +44,18 @@
 .shopped-txt {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  /* margin-left: 10px; */
+  margin: auto;
   font-size: 18px;
   font-family: inherit;
 }
 .shopped-txt div {
   flex: 1;
   padding-block: 4px;
-  /* border: 1px solid black; */
+}
+.shopped-txt div:not(:first-child) {
+  color: rgb(228, 223, 223);
+  font-size: 16px;
 }
 .remove {
   width: 1rem;
@@ -56,9 +69,6 @@
   display: none;
   transition: all 1s;
 }
-.shop-card:hover .remove {
-  display: inline-block;
-}
 .remove input {
   display: none;
 }
@@ -71,7 +81,7 @@
   row-gap: 0.8em;
 }
 .financial-service-box div {
-  background-color: skyblue;
+  background-color: #90c3fbf4;
   padding: 8px;
   cursor: pointer;
 }
@@ -88,4 +98,15 @@
   color: #010101;
   font-size: 18px;
   background-color: rgba(146, 141, 141, 0.116);
+}
+#pay-number {
+  background-color: rgba(195, 244, 251, 0.867);
+  padding-block: 2px;
+  width: 40%;
+}
+.payers {
+  display: flex;
+}
+.payers span:first-child {
+  flex: 1;
 }

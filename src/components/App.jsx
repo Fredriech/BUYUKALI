@@ -1,11 +1,10 @@
 import React from "react";
-import SignUp from "./SignUp";
-import Login from "./Login";
 import Home from "./Home";
 import Layout from "./Layout";
 import Market from "./Market";
 import Stock from "./Stock";
 import Purchase from "./Purchase";
+import Registry from "./Registry";
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import MarketLayout from "./MarketLayout";
@@ -15,8 +14,7 @@ let MyApp = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="Login" element={<Login />} />
-          <Route path="Register" element={<SignUp />} />
+          <Route path="Register" element={<Registry />} />
 
           <Route path="Market" element={<Market />} />
 

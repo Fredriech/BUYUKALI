@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../static/MarketLayout.css";
 import { NavLink, Outlet } from "react-router-dom";
 
 export default () => {
+  const [folders, setFolder] = useState({
+    count: 0,
+    paths: [],
+  });
   return (
     <div className="down-link">
       <ul className="linked">
@@ -29,11 +33,11 @@ export default () => {
             }}
             to="Purchase"
           >
-            Purchase
+            Shopped
           </NavLink>
         </li>
       </ul>
-      <Outlet />
+      <Outlet context={[folders, setFolder]} />
     </div>
   );
 };

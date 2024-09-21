@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { redirect, useParams } from "react-router-dom";
 import Data from "../ServerData.json";
 import "../static/Stock.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function Stock() {
   const params = useParams();
   const id = Number(params.id);
+  const [folders, setFolder] = useOutletContext();
+
   const [data, setData] = useState({
     imgA: "",
     imgGrp: (
@@ -15,6 +17,7 @@ export default function Stock() {
       </div>
     ),
   });
+
   const [like, setLike] = useState(0);
 
   function viewImg({ target }) {
@@ -97,7 +100,25 @@ export default function Stock() {
             </div>
           </div>
           <div className="dButton">
-            <button className="buy-button">Add to Cart</button>
+            <button
+              className="buy-button"
+              onClick={() => {
+                setFolder((p) => {
+                  if (p.paths.includes(data.imgA.url)) {
+                    return {
+                      ...p,
+                    };
+                  } else {
+                    return {
+                      paths: [...p.paths, data.imgA.url],
+                      count: p.count + 1,
+                    };
+                  }
+                });
+              }}
+            >
+              Add to Cart
+            </button>
             <button className="buy-button" onClick={reDirectPage}>
               Buy
             </button>

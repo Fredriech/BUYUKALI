@@ -15,19 +15,9 @@ function Navbar() {
               className={({ isActive }) =>
                 isActive ? "active-link linker" : "linker"
               }
-              to="/Login"
+              to="/"
             >
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "active-link linker" : "linker"
-              }
-              to="/Register"
-            >
-              Sign-up
+              Home
             </NavLink>
           </li>
           <li>
@@ -45,9 +35,9 @@ function Navbar() {
               className={({ isActive }) =>
                 isActive ? "active-link linker" : "linker"
               }
-              to="/"
+              to="/Register"
             >
-              Home
+              Register
             </NavLink>
           </li>
         </ul>

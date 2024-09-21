@@ -1,0 +1,45 @@
+.regist-container {
+  background-color: #3e3a3a;
+  color: #000;
+  padding-block: 1em;
+}
+.regist-wrapper {
+  margin: auto;
+  width: 34rem;
+  border: 1px solid;
+  display: flex;
+  border-radius: 10px 10px 0 0;
+  padding: 6px;
+  box-shadow: 6px 4px 6px 6px rgba(16, 12, 12, 0.088);
+  background-color: rgba(245, 245, 245, 0.986);
+}
+.regist-wrapper div {
+  flex-grow: 1;
+  padding: 4px;
+}
+.log-in {
+  text-align: center;
+}
+.sign-in {
+  color: #fff;
+  text-align: center;
+  background-color: #3e3a3a;
+  width: 12rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  width: 14rem;
+}
+.type-input {
+  color: #444444;
+  margin: 8px 6px;
+  height: 1.8em;
+  border-radius: 4px 4px 0 0;
+  border: 2px solid rgb(112, 112, 247);
+  padding: 6px;
+  font-size: 14px;
+  background-color: rgba(160, 160, 160, 0.201);
+}
