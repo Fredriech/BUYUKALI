@@ -2,11 +2,13 @@ import React from "react";
 import "../static/navBar.css";
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ count }) {
+  count = count ? count : "";
   return (
     <div className="app-name">
       <div className="logo">
-        <img src="/src/images/logo2.png" />
+        <span>BUYUKALI</span>
+        {/* <img src="/src/images/logo2.png" /> */}
       </div>
       <div className="nav-link">
         <ul>
@@ -17,7 +19,7 @@ function Navbar() {
               }
               to="/"
             >
-              Home
+              Registry
             </NavLink>
           </li>
           <li>
@@ -27,7 +29,7 @@ function Navbar() {
               }
               to="/Market"
             >
-              Shooping
+              Shopping
             </NavLink>
           </li>
           <li>
@@ -37,9 +39,17 @@ function Navbar() {
               }
               to="/Register"
             >
-              Register
+              Home
             </NavLink>
           </li>
+          {count && (
+            <li id="mycart-count">
+              <div>
+                <img src="/src/icons/shopping_cart.svg" />
+                <span>{count}</span>
+              </div>
+            </li>
+          )}
         </ul>
       </div>
     </div>

@@ -6,7 +6,7 @@ import Stock from "./Stock";
 import Purchase from "./Purchase";
 import Registry from "./Registry";
 
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MarketLayout from "./MarketLayout";
 
 let MyApp = () => {
@@ -14,7 +14,7 @@ let MyApp = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="Register" element={<Registry />} />
+          <Route index element={<Registry />} />
 
           <Route path="Market" element={<Market />} />
 
@@ -23,7 +23,7 @@ let MyApp = () => {
             <Route path="Purchase" element={<Purchase />} />
           </Route>
 
-          <Route index element={<Home />} />
+          <Route path="Register" element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>

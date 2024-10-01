@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { redirect, useParams } from "react-router-dom";
-import Data from "../ServerData.json";
 import "../static/Stock.css";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 export default function Stock() {
   const params = useParams();
   const id = Number(params.id);
-  const [folders, setFolder] = useOutletContext();
+  const { setFolder, Data } = useOutletContext();
 
   const [data, setData] = useState({
     imgA: "",
@@ -22,10 +21,17 @@ export default function Stock() {
 
   function viewImg({ target }) {
     const indx = target.src.indexOf("src") - 1;
+
     setData((p) => {
       return {
         ...p,
-        imgA: { url: target.src.substr(indx) },
+        imgA: {
+          id: 0,
+          url: target.src.substr(indx),
+          type: "",
+          category: "",
+          amount: 23,
+        },
       };
     });
   }
@@ -40,7 +46,7 @@ export default function Stock() {
             </div>
           );
         });
-        setData((p) => {
+        setData(() => {
           return {
             imgGrp: d,
             imgA: value,
@@ -52,7 +58,31 @@ export default function Stock() {
 
   const navigate = useNavigate();
 
+  const addPhoto = () => {
+    setFolder((p) => {
+      let k = false;
+      p.paths.forEach((v) => {
+        if (v.url === data.imgA.url) k = true;
+      });
+      if (k) {
+        return {
+          ...p,
+        };
+      } else {
+        return {
+          paths: [
+            ...p.paths,
+            ...Data.filter((v) => {
+              return v.url === data.imgA.url;
+            }),
+          ],
+          count: p.count + 1,
+        };
+      }
+    });
+  };
   function reDirectPage() {
+    addPhoto();
     return navigate("Purchase");
   }
 
@@ -100,23 +130,7 @@ export default function Stock() {
             </div>
           </div>
           <div className="dButton">
-            <button
-              className="buy-button"
-              onClick={() => {
-                setFolder((p) => {
-                  if (p.paths.includes(data.imgA.url)) {
-                    return {
-                      ...p,
-                    };
-                  } else {
-                    return {
-                      paths: [...p.paths, data.imgA.url],
-                      count: p.count + 1,
-                    };
-                  }
-                });
-              }}
-            >
+            <button className="buy-button" onClick={addPhoto}>
               Add to Cart
             </button>
             <button className="buy-button" onClick={reDirectPage}>

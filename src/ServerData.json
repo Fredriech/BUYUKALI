@@ -1,46 +1,114 @@
 [
   {
     "id": 0,
-    "url": "/src/images/20240822_202122.jpg"
+    "url": "/src/images/20240822_202122.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
   },
   {
     "id": 1,
-    "url": "/src/images/T1.jpg"
+    "url": "/src/images/T1.jpg",
+    "type": "T-shirt",
+    "category": "men style",
+    "amount": 18000
   },
   {
     "id": 2,
-    "url": "/src/images/20240822_202834.jpg"
+    "url": "/src/images/airmax0.jpg",
+    "type": "shoe",
+    "category": "dramatic",
+    "amount": 75000
   },
   {
     "id": 3,
-    "url": "/src/images/20240822_203046.jpg"
+    "url": "/src/images/20240822_203046.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
   },
   {
     "id": 4,
-    "url": "/src/images/Boxer.jpg"
+    "url": "/src/images/menboxers.jpg",
+    "type": "men underwear",
+    "category": "official",
+    "amount": 10000
   },
   {
     "id": 5,
-    "url": "/src/images/pullneck.jpg"
+    "url": "/src/images/pullneck.jpg",
+    "type": "long-tshirt",
+    "category": "official",
+    "amount": 25000
   },
   {
     "id": 6,
-    "url": "/src/images/T2.jpg"
+    "url": "/src/images/T2.jpg",
+    "type": "Tshirt",
+    "category": "men",
+    "amount": 16000
   },
   {
     "id": 7,
-    "url": "/src/assets/man.jpg"
+    "url": "/src/assets/man.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
   },
   {
     "id": 8,
-    "url": "/src/images/20240822_202349.jpg"
+    "url": "/src/images/20240822_202349.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
   },
   {
     "id": 9,
-    "url": "/src/assets/insidedark.jpg"
+    "url": "/src/assets/insidedark.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
   },
   {
     "id": 10,
-    "url": "/src/assets/greengrasses.jpg"
+    "url": "/src/assets/greengrasses.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
+  },
+  {
+    "id": 11,
+    "url": "/src/images/Boxer.jpg",
+    "type": "men underwear",
+    "category": "official",
+    "amount": 12000
+  },
+  {
+    "id": 12,
+    "url": "/src/images/airmax1.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
+  },
+  {
+    "id": 13,
+    "url": "/src/images/20240822_203251.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
+  },
+  {
+    "id": 14,
+    "url": "/src/images/20240822_203214.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
+  },
+  {
+    "id": 15,
+    "url": "/src/images/20240822_203004.jpg",
+    "type": "long-dress",
+    "category": "official",
+    "amount": 25000
   }
 ]

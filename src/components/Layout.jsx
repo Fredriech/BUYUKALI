@@ -3,13 +3,20 @@ import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import "../static/Layout.css";
+import { useState } from "react";
+import Data from "../ServerData.json";
 
 export default function Layout() {
+  const [folders, setFolder] = useState({
+    count: 0,
+    paths: [],
+  });
+
   return (
     <div className="layout-box">
-      <Navbar />
+      <Navbar count={folders.count} />
       <div className="inner-container">
-        <Outlet />
+        <Outlet context={{ folders, setFolder, Data }} />
         <Footer />
       </div>
     </div>

@@ -1,6 +1,5 @@
 .footer {
   padding-block: 1.4rem;
-  margin-top: 1em;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -56,4 +55,8 @@ input {
   background-color: rgba(227, 24, 132, 0.832);
   cursor: pointer;
   border: 4px solid rgba(32, 32, 32, 0.256);
+}
+.input-button:active {
+  cursor: progress;
+  background: rgb(245, 36, 147);
 }

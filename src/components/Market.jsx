@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "../static/Market.css";
-import Data from "../ServerData.json";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function Market() {
   const [pics, setPics] = useState([]);
+  const { Data } = useOutletContext();
+
   useEffect(() => {
     setPics(
       Data.map((data) => {

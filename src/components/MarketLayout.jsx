@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "../static/MarketLayout.css";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 
 export default () => {
-  const [folders, setFolder] = useState({
-    count: 0,
-    paths: [],
-  });
   return (
     <div className="down-link">
       <ul className="linked">
@@ -37,7 +33,7 @@ export default () => {
           </NavLink>
         </li>
       </ul>
-      <Outlet context={[folders, setFolder]} />
+      <Outlet context={useOutletContext()} />
     </div>
   );
 };

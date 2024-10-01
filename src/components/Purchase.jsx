@@ -3,13 +3,14 @@ import "../static/Purchase.css";
 import { useOutletContext } from "react-router-dom";
 
 export default () => {
+  const { folders, setFolder, Data } = useOutletContext();
+
   const [payService, setPayNumber] = useState({
     payNumber: 57825812,
     payComp: "Mpesa",
-    isRemoved: false,
     cards: [],
+    totalPrice: 0,
   });
-  const [folders] = useOutletContext();
 
   const generatePayNumber = (e) => {
     const myId = e.target.attributes.id.value;
@@ -39,39 +40,48 @@ export default () => {
       });
     }
   };
-  console.log(payService.isRemoved);
+  const handlePayer = () => {
+    if (payService.payComp === "NMB") {
+      return "pay-numberNMB";
+    } else if (payService.payComp === "CRDB") {
+      return "pay-numberCRDB";
+    } else {
+      return "pay-number";
+    }
+  };
 
   useEffect(() => {
+    let sum = 0;
     const takeCards = folders.paths.map((value, id) => {
+      sum += Number(value.amount);
       return (
         <div className="shop-card" key={id}>
           <label className="remove" htmlFor={`check-box${id}`}>
             <input
-              type="checkbox"
-              name={`isRemoved${id}`}
-              checked={payService.isRemoved}
-              onChange={(e) => {
-                const nm = e.target.name;
-                console.log(nm);
-                setPayNumber((p) => {
+              value="X"
+              type="submit"
+              onClick={() => {
+                const pacels = folders.paths.filter((mypath) => {
+                  return mypath.url !== value.url;
+                });
+                setFolder(() => {
                   return {
-                    ...p,
-                    isRemoved: !p.isRemoved,
+                    count: pacels.length,
+                    paths: pacels,
                   };
                 });
               }}
               id={`check-box${id}`}
             />
-            X
           </label>
 
           <div className="image-box">
-            <img src={value} alt="shopped" />
+            <img src={value.url} alt="shopped" />
           </div>
           <div className="shopped-txt">
-            <div>Type: short dress</div>
-            <div>official</div>
-            <div>price: 25,000/=</div>
+            <div>Type: {value.type}</div>
+            <div>{value.category}</div>
+            <div>price: {value.amount}/= Tshs</div>
           </div>
         </div>
       );
@@ -80,9 +90,10 @@ export default () => {
       return {
         ...p,
         cards: takeCards,
+        totalPrice: sum,
       };
     });
-  }, []);
+  }, [folders.paths]);
 
   return (
     <div className="Purchase-container">
@@ -103,10 +114,10 @@ export default () => {
         </div>
 
         <div id="total-price">
-          <p>Total price: 25,000/=</p>
+          <p>Total price: {payService.totalPrice}/= Tshs</p>
           <p className="payers">
             <span>{payService.payComp} payment number: </span>
-            <span id="pay-number">{payService.payNumber}</span>
+            <span id={handlePayer()}>{payService.payNumber}</span>
           </p>
         </div>
       </div>

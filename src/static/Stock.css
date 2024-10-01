@@ -127,7 +127,7 @@ body {
   display: none;
 }
 .checkme span {
-  color: plum;
+  color: rgb(159, 244, 32);
   font-size: 28px;
   cursor: pointer;
   transition: all 0.3s;
@@ -140,7 +140,7 @@ body {
   position: relative;
 }
 .checkme input:checked ~ span {
-  color: red;
+  color: rgb(247, 178, 247);
 }
 .liked {
   text-align: center;
@@ -173,6 +173,9 @@ body {
 .buy-button {
   position: absolute;
   bottom: 0;
+}
+.buy-button:focus {
+  border: none;
 }
 .buy-button:last-child {
   z-index: 50;

@@ -1,13 +1,12 @@
 .img-box {
-  /* margin: 0.2em; */
   border-radius: 10px;
-  max-width: 550px;
+  max-width: 600px;
   align-self: center;
 }
 .img-box img {
   width: 100%;
   border-radius: 10px;
-  max-height: 18rem;
+  max-height: 20rem;
   /* height: 100%; */
   object-fit: cover;
   object-position: top;

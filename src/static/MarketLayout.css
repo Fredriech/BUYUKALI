@@ -1,42 +1,37 @@
 .down-link .linked {
   list-style-type: none;
   display: flex;
-  /* gap: 0.1rem; */
   min-height: 2em;
   color: aliceblue;
-  padding-left: 14px;
+  padding-left: 40px;
+  /* border: 3px solid red; */
 }
 .linked li {
-  min-width: 3.4rem;
-  padding: 0.4em 1em;
+  width: 6.4rem;
+  height: 2.4rem;
+  padding: 0.4em 0;
   text-align: center;
-  font-size: 16px;
   border: 3px solid transparent;
+  font-size: 16px;
   transition: all 0.25s;
   box-sizing: border-box;
+  flex-grow: 6rem;
 }
 .linked li:first-child {
+  padding: 0.4em 1em;
+  width: 5.4rem;
   border: 3px solid rgba(110, 109, 109, 0.427);
 }
 .barbelow {
-  min-width: 3.4rem;
-  padding: 0.4em 1em;
-  text-align: center;
-  font-size: 16px;
-  position: relative;
+  background-color: rgba(191, 106, 155, 0.281);
+  border-top: 3px solid rgb(181, 22, 102);
+  padding: 5px 16px 8px;
 }
-.barbelow::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  background-color: rgb(231, 22, 119);
-}
+
 .nav-linker {
   text-decoration: none;
-  color: aliceblue;
+  color: rgb(221, 227, 233);
+  box-sizing: border-box;
 }
 .linked li:first-child:hover {
   background-color: rgba(208, 8, 128, 0.795);
