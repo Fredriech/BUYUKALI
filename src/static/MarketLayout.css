@@ -31,7 +31,7 @@
 .nav-linker {
   text-decoration: none;
   color: rgb(221, 227, 233);
-  box-sizing: border-box;
+  padding: 5px 0.8em 11px;
 }
 .linked li:first-child:hover {
   background-color: rgba(208, 8, 128, 0.795);

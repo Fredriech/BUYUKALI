@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../static/Stock.css";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
@@ -29,15 +29,15 @@ export default function Stock() {
           id: 0,
           url: target.src.substr(indx),
           type: "",
-          category: "",
           amount: 23,
+          category: "",
         },
       };
     });
   }
 
   useEffect(() => {
-    Data.forEach((value) => {
+    for (const value of Data) {
       if (value.id === id) {
         let d = Data.map((v) => {
           return (
@@ -52,8 +52,9 @@ export default function Stock() {
             imgA: value,
           };
         });
+        break;
       }
-    });
+    }
   }, [params]);
 
   const navigate = useNavigate();

@@ -17,13 +17,11 @@
   padding-left: 2em;
   padding-right: 2em;
   display: grid;
+  justify-content: center;
   grid-template-areas:
     "area11 area11 area12" "area2 area21 area22"
     "area3 area33 area33" "area4 area41 area42";
   column-gap: 2em;
-  justify-content: center;
-  font-size: 14px;
-  font-family: cursive;
   max-width: 1000px;
   margin: auto;
   row-gap: 6em;
@@ -66,14 +64,19 @@
   grid-area: area42;
 }
 .text-holder {
+  font-size: 14px;
+  font-family: cursive;
+
   padding: 0 1rem;
   text-align: center;
   position: relative;
-  overflow-y: hidden;
+  overflow-y: auto;
   background-color: rgba(95, 93, 93, 0.266);
   margin-block: 10px;
 }
 .text {
   position: absolute;
   line-height: 35px;
+  padding-right: 12px;
+  font-family: "lato", "sans-serif";
 }

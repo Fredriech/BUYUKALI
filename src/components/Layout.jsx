@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import Footer from "./Footer";
 import "../static/Layout.css";
 import { useState } from "react";
-import Data from "../ServerData.json";
 
 export default function Layout() {
   const [folders, setFolder] = useState({
     count: 0,
     paths: [],
   });
+  const Data = useLoaderData();
 
   return (
     <div className="layout-box">

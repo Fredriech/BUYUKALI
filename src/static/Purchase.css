@@ -106,7 +106,7 @@
 #pay-number,
 #pay-numberNMB,
 #pay-numberCRDB {
-  background-color: transparent;
+  background-color: #202020;
   padding-block: 2px;
   border-bottom: 2px solid rgb(255, 45, 45);
   box-sizing: border-box;
