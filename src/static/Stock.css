@@ -30,7 +30,6 @@ body {
   margin: 0.8em;
   padding: 0.4rem;
   box-shadow: 1px -2px 5px 1px rgba(129, 129, 129, 0.192);
-  /* border: 1px solid rgba(66, 66, 66, 0.192); */
 }
 
 .image-slider {
@@ -83,7 +82,6 @@ body {
 .img-details {
   font-size: 1.14rem;
   padding: 0.24em;
-  /* border: 2px solid white; */
   line-height: 21px;
   letter-spacing: 1px;
 }
@@ -119,7 +117,6 @@ body {
   box-shadow: none;
 }
 .price {
-  /* background-color: rgba(223, 19, 158, 0.908); */
   color: whitesmoke;
   padding: 2px 8px;
 }
@@ -144,25 +141,10 @@ body {
 }
 .liked {
   text-align: center;
-  /* background-color: rgba(169, 166, 166, 0.322); */
   color: whitesmoke;
   font-size: 18px;
 }
-.wrapper {
-  height: 4rem;
-  width: 4rem;
-  margin: auto;
-  border-radius: 50%;
-  align-self: center;
-  border: 1em solid rgba(116, 115, 115, 0.37);
-  border-top: 1em solid rgb(214, 32, 147);
-  animation: spin 0.1s infinite linear;
-}
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 .dButton {
   display: flex;
   justify-content: left;

@@ -3,7 +3,7 @@ import "../static/Purchase.css";
 import { useOutletContext } from "react-router-dom";
 
 export default () => {
-  const { folders, setFolder, Data } = useOutletContext();
+  const { folders, setFolder } = useOutletContext();
 
   const [payService, setPayNumber] = useState({
     payNumber: 57825812,

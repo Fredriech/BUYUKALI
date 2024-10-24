@@ -14,7 +14,7 @@ function Footer() {
       <div>Follow us on:</div>
       <div className="img-icon-box icon-box">
         <img src={man} alt="instagram" />
-        <i>inspektaekko</i>
+        <i>inspekta_freddie</i>
       </div>
       <div className="img-icon-box icon-box">
         <img src={time} alt="facebook" />

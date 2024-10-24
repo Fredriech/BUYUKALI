@@ -1,145 +1,144 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import "../static/Stock.css";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import {
+  useNavigate,
+  useOutletContext,
+  useLoaderData,
+  Await,
+} from "react-router-dom";
 
 export default function Stock() {
   const params = useParams();
-  const id = Number(params.id);
-  const { setFolder, Data } = useOutletContext();
+  const { setFolder } = useOutletContext();
+  const loadedData = useLoaderData();
 
   const [data, setData] = useState({
     imgA: "",
-    imgGrp: (
-      <div className="wrapper">
-        <div className="spinner"></div>
-      </div>
-    ),
+    imgGrp: [],
   });
 
   const [like, setLike] = useState(0);
-
-  function viewImg({ target }) {
-    const indx = target.src.indexOf("src") - 1;
-
-    setData((p) => {
-      return {
-        ...p,
-        imgA: {
-          id: 0,
-          url: target.src.substr(indx),
-          type: "",
-          amount: 23,
-          category: "",
-        },
-      };
-    });
-  }
-
-  useEffect(() => {
-    for (const value of Data) {
-      if (value.id === id) {
-        let d = Data.map((v) => {
-          return (
-            <div key={v.id} className="img-A">
-              <img src={v.url} onClick={viewImg} />
-            </div>
-          );
-        });
-        setData(() => {
-          return {
-            imgGrp: d,
-            imgA: value,
-          };
-        });
-        break;
-      }
-    }
-  }, [params]);
-
   const navigate = useNavigate();
 
   const addPhoto = () => {
     setFolder((p) => {
-      let k = false;
-      p.paths.forEach((v) => {
-        if (v.url === data.imgA.url) k = true;
-      });
-      if (k) {
-        return {
-          ...p,
-        };
-      } else {
-        return {
-          paths: [
-            ...p.paths,
-            ...Data.filter((v) => {
-              return v.url === data.imgA.url;
-            }),
-          ],
-          count: p.count + 1,
-        };
+      for (const v of p.paths) {
+        if (v.url === data.imgA.url) {
+          return {
+            ...p,
+          };
+        }
       }
+      return {
+        paths: [...p.paths, data.imgA],
+        count: p.count + 1,
+      };
     });
   };
+
   function reDirectPage() {
     addPhoto();
-    return navigate("Purchase");
+    return navigate(`/Market/${params.id}/Purchase`, { replace: true });
   }
 
   return (
     <div className="contain-detail">
-      <div className="image-slider">{data.imgGrp}</div>
-      <div className="center-img">
-        <div className="img-wrapper">
-          {data !== "" ? (
-            <img src={data.imgA.url} className="detailed-img" />
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="img-details">
-          <div className="details-o1">
-            <div className="bk">Type: long dress</div>
-            <div className="liked">
-              Like{" "}
-              <label className="checkme">
-                <input
-                  type="checkbox"
-                  onClick={(e) =>
-                    e.target.checked
-                      ? setLike((p) => p + 1)
-                      : setLike((p) => p - 1)
-                  }
-                />
-                <span>&#9829;</span>
-              </label>
-              <strong>{like}</strong>
-            </div>
+      <Suspense
+        fallback={
+          <div className="wrapper-b">
+            <div></div>
           </div>
+        }
+      >
+        <Await resolve={loadedData.viewData}>
+          {(Data) => {
+            useEffect(() => {
+              for (const value of Data) {
+                if (value.id === Number(params.id)) {
+                  const d = Data.map((v) => {
+                    return (
+                      <div key={v.id} className="img-A">
+                        <img
+                          src={v.url}
+                          onClick={() => {
+                            setData((p) => {
+                              return {
+                                ...p,
+                                imgA: v,
+                              };
+                            });
+                          }}
+                        />
+                      </div>
+                    );
+                  });
+                  setData(() => {
+                    return {
+                      imgGrp: d,
+                      imgA: value,
+                    };
+                  });
+                  break;
+                }
+              }
+            }, [params]);
+            return (
+              <>
+                <div className="image-slider">{data.imgGrp}</div>
 
-          <div className="bk">
-            chest size: <i className="metric">30</i> cm
-          </div>
-          <div className="bk">
-            waist size: <i className="metric">32</i> cm
-          </div>
+                <div className="center-img">
+                  <div className="img-wrapper">
+                    <img src={data.imgA.url} className="detailed-img" />
+                  </div>
 
-          <div className="with-but">
-            <div>
-              price: <span className="price">30000 Tsh</span>{" "}
-            </div>
-          </div>
-          <div className="dButton">
-            <button className="buy-button" onClick={addPhoto}>
-              Add to Cart
-            </button>
-            <button className="buy-button" onClick={reDirectPage}>
-              Buy
-            </button>
-          </div>
-        </div>
-      </div>
+                  <div className="img-details">
+                    <div className="details-o1">
+                      <div className="bk">Type: long dress</div>
+                      <div className="liked">
+                        Like{" "}
+                        <label className="checkme">
+                          <input
+                            type="checkbox"
+                            onClick={(e) =>
+                              e.target.checked
+                                ? setLike((p) => p + 1)
+                                : setLike((p) => p - 1)
+                            }
+                          />
+                          <span>&#9829;</span>
+                        </label>
+                        <strong>{like}</strong>
+                      </div>
+                    </div>
+
+                    <div className="bk">
+                      chest size: <i className="metric">30</i> cm
+                    </div>
+                    <div className="bk">
+                      waist size: <i className="metric">32</i> cm
+                    </div>
+
+                    <div className="with-but">
+                      <div>
+                        price: <span className="price">30000 Tsh</span>{" "}
+                      </div>
+                    </div>
+                    <div className="dButton">
+                      <button className="buy-button" onClick={addPhoto}>
+                        Add to Cart
+                      </button>
+                      <button className="buy-button" onClick={reDirectPage}>
+                        Buy
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          }}
+        </Await>
+      </Suspense>
     </div>
   );
 }

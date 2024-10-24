@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../static/MarketLayout.css";
 import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 

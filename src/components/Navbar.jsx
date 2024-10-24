@@ -3,7 +3,10 @@ import "../static/navBar.css";
 import { NavLink } from "react-router-dom";
 
 function Navbar({ count }) {
+  const logged = Boolean(sessionStorage.getItem("isLogged"));
   count = count ? count : "";
+  // console.log(logged);
+
   return (
     <div className="app-name">
       <div className="logo">
