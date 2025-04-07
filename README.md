@@ -1,2 +1,2 @@
 # BUYUKALI
- This is for my new website that deals with cloth and styles
+ This is for my new e-commerce website that deals with selling clothes and other accesories.
